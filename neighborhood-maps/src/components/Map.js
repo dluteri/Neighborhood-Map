@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
-
+// Mounts Google Maps to project. 
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
-        defaultZoom={8}
-        defaultCenter={{ lat: -34.397, lng: 150.644 }}
+        defaultZoom={10}
+        defaultCenter={{ lat: 41.881832, lng: -87.623177 }}
     >
-    {props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} />}
+    {props.isMarkerShown && <Marker position={{ lat: 41.881832, lng: -87.623177 }} />}
     </GoogleMap>
 ))
 
