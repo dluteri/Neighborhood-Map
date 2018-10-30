@@ -4,6 +4,14 @@ import Map from './components/Map.js';
 import FourSquareAPI from './api/index.js';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      venues: [],
+      markers: [],
+    };
+}
+
   componentWillMount() {
     FourSquareAPI.search({
       near:"Chicago, IL",
@@ -11,6 +19,16 @@ class App extends Component {
       radius: 800, 
       Limit: 40
     }).then(results => {
+      const [ venues ] = results.response;
+      const markers = venues.map(venue => {
+        return {
+          lat: venue.location.lat,
+          lng: venue.location.lng,
+          isOpen: false,
+          isVisible: true,
+        }
+      })
+      this.setState([venues, markers]);
       console.log(results);
     });
   };
@@ -18,12 +36,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Map />
+        <Map {...this.state}/>
       </div>
     );
   }
 }
 
 export default App;
-
-// Code referenced from Forrest Walker's YouTube Tutorial - https://www.youtube.com/watch?v=Dj5hzKBxCBI&list=PL4rQq4MQP1crXuPtruu_eijgOUUXhcUCP&index=3

@@ -53,3 +53,5 @@ export default class FourSquareAPI {
         return Helper.simpleFetch(`/venues/${VENUE_ID}/photos`, "GET");
     }
 }
+
+// Code referenced from Forrest Walker's YouTube Tutorial - https://www.youtube.com/watch?v=Dj5hzKBxCBI&list=PL4rQq4MQP1crXuPtruu_eijgOUUXhcUCP&index=3
