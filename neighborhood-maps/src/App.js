@@ -1,36 +1,51 @@
 import React, { Component } from 'react';
 import './App.css';
 import Map from './components/Map.js';
-import FourSquareAPI from './api/index.js';
+import FourSquareAPI from './api/';
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       venues: [],
       markers: [],
     };
 }
 
-  componentWillMount() {
+  componentDidMount() { 
     FourSquareAPI.search({
       near:"Chicago, IL",
-      category: "4bf58dd8d48988d181941735", // museums
-      radius: 800, 
-      Limit: 40
-    }).then(results => {
-      const [ venues ] = results.response;
+      query: "museum", // museums
+      limit: 50
+    })
+
+
+    .then(results => {
+/* when this is .then(), I get "Unhandled Rejection (TypeError): Cannot read property 'response' of undefined" error.
+    object does return with data, though...
+    when it is fetch(), error is gone, but map show blank and markers do not show. */
+
+
+      const { venues } = results.response;
       const markers = venues.map(venue => {
         return {
           lat: venue.location.lat,
           lng: venue.location.lng,
+          title: venue.name,
           isOpen: false,
           isVisible: true,
+          id: venue.id
         }
       })
-      this.setState([venues, markers]);
+      this.setState( { venues, markers } );
       console.log(results);
-    });
+    })
+
+    /* Alert code from Tyler Stahl*/
+    .catch(error => {
+      window.alert('Error getting data from Foursquare: '+error.message);
+      console.log(error);
+    })
   };
   
   render() {

@@ -13,7 +13,7 @@ class Helper {
         .map(key=> `${key}=${keys[key]}`)
         .join('&')
     }
-    static urlBuilder(urlPrams){
+    static urlBuilder(urlPrams){ //Prams = parameters
         if(!urlPrams){
             return ""
         }
@@ -37,6 +37,7 @@ class Helper {
             console.log('Success:', results);
         }
         catch (error) {
+            window.alert('Error fetching Foursquare data: '+error.message);
             return console.error('Error:', error);
         }
         }
