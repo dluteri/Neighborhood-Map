@@ -31,17 +31,14 @@ class Helper {
             method,
             headers: Helper.headers()
         };
-        try {
-            const res = await fetch(`${Helper.baseURL()}${endPoint}?${Helper.auth()}&${Helper.urlBuilder(urlPrams)}`, requestData);
-            const results = await res.json();
-            console.log('Success:', results);
-        }
-        catch (error) {
-            window.alert('Error fetching Foursquare data: '+error.message);
-            return console.error('Error:', error);
-        }
-        }
+        return fetch(
+            `${Helper.baseURL()}${endPoint}?${Helper.auth()}&${Helper.urlBuilder(
+                urlPrams
+            )}`,
+            requestData
+        ).then(res => res.json());
     }
+}
 
 export default class FourSquareAPI {
     static search(urlPrams) {
