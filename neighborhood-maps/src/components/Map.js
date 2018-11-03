@@ -22,7 +22,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
             <InfoWindow>
                 <React.Fragment>
                 <p>{venueInfo.name}</p>
-                <img src={`${venueInfo.bestPhoto.prefix}200x200${venueInfo.bestPhoto.suffix}`}alt="Venue Image"/>
+                <img src={`${venueInfo.bestPhoto.prefix}200x200${venueInfo.bestPhoto.suffix}`}alt="Venue"/>
                 </React.Fragment>
             </InfoWindow>
             )}
@@ -40,7 +40,7 @@ render() {
     isMarkerShown
     googleMapURL="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDswyf0u0pPovvQ3md6sY6hQEarYc3z7cE"
     loadingElement={<div style={{ height: `100%` }} />}
-    containerElement={<div style={{ height: `400px` }} />}
+    containerElement={<div style={{ height: `100%`, width: `75%` }} />}
     mapElement={<div style={{ height: `100%` }} />}
 />);
 }
