@@ -3,6 +3,7 @@ import './App.css';
 import Map from './components/Map.js';
 import FourSquareAPI from './api/';
 
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -10,8 +11,14 @@ class App extends Component {
       venues: [],
       markers: [],
     };
-}
-
+  }
+  
+  // Opens InfoWindow when marker is clicked
+  handleMarkerClick = (marker) =>  {
+    marker.isOpen = true; 
+    this.setState({markers: Object.assign(this.state.markers, marker)})
+  }
+  
   componentDidMount() { 
     FourSquareAPI.search({
       near:"Chicago, IL",
@@ -21,10 +28,6 @@ class App extends Component {
 
 
     .then(results => {
-/* when this is .then(), I get "Unhandled Rejection (TypeError): Cannot read property 'response' of undefined" error.
-    object does return with data, though...
-    when it is fetch(), error is gone, but map show blank and markers do not show. */
-
 
       const { venues } = results.response;
       const markers = venues.map(venue => {
@@ -51,7 +54,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Map {...this.state}/>
+        <Map {...this.state}
+        handleMarkerClick = {this.handleMarkerClick} />
       </div>
     );
   }
