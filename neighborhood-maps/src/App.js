@@ -13,12 +13,36 @@ class App extends Component {
     };
   }
   
+  //function to close any open marker before opening a new one
+  closeAllMarkers = () => {
+    const markers = this.state.markers.map(marker => {
+      marker.isOpen = false;
+      marker.clickedOnMarker = false;
+      return marker;
+    });
+    //resets the state of markers
+    this.setState({markers:Object.assign(markers, markers)})
+  }
+
   // Opens InfoWindow when marker is clicked
   handleMarkerClick = (marker) =>  {
+    this.closeAllMarkers();
     marker.isOpen = true; 
-    this.setState({markers: Object.assign(this.state.markers, marker)})
-  }
-  
+    this.setState({markers: Object.assign(this.state.markers, marker)});
+    const venue = this.state.venues.find(venue => venue.id === marker.id)
+        
+    FourSquareAPI.getVenueDetails(marker.id)
+    .then(results => {
+    const mergedVenueData = Object.assign(venue, results.response.venue);
+    this.setState({venues: Object.assign(this.state.venues, mergedVenueData)})
+
+    console.log(venue);
+  })
+  .catch(error => {
+    this.setState({error})
+    console.log(this.state.error)
+  })
+}
   componentDidMount() { 
     FourSquareAPI.search({
       near:"Chicago, IL",
