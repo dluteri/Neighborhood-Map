@@ -11,6 +11,9 @@ class App extends Component {
     this.state = {
       venues: [],
       markers: [],
+      updateSuperState: obj => {
+        this.setState(obj);
+      }
     };
   }
   

@@ -18,11 +18,13 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
             key={idx} 
             position={{ lat: marker.lat, lng: marker.lng}} 
             onClick={() => props.handleMarkerClick(marker)}>
-            {marker.isOpen && venueInfo.bestPhoto && (
+            {/* TODO: Add error image if no data/image is available */}
+            {marker.isOpen && venueInfo.bestPhoto && ( 
             <InfoWindow>
                 <React.Fragment>
                 <p>{venueInfo.name}</p>
-                <img src={`${venueInfo.bestPhoto.prefix}200x200${venueInfo.bestPhoto.suffix}`}alt="Venue"/>
+                <img src={`${venueInfo.bestPhoto.prefix}200x200${venueInfo.bestPhoto.suffix}`}
+                    alt={`${venueInfo.name}`} />
                 </React.Fragment>
             </InfoWindow>
             )}
