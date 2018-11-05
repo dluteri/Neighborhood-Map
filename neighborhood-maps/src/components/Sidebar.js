@@ -7,11 +7,22 @@ export default class Sidebar extends Component {
 constructor() {
     super();
     this.state = {
-        query: ""
+        query: "",
+        venues: []
     };
 }
 
-    searchVenues = () => {}; 
+    searchVenues = () => { 
+        if (this.state.query.trim() !== "") {
+            const venues = this.props.venues.filter(venue => venue.name
+                .toLowerCase()
+                .includes(this.state.query.toLowerCase()))
+            return venues;
+        }
+        return this.props.venues;
+    };
+
+
     handleChange = event => {
         this.setState({ query: event.target.value});
         const markers = this.props.venues.map(venue => {
@@ -33,7 +44,9 @@ constructor() {
             <input type={"search"} id={"search"} placeholder={"Filter Venues"} onChange={this.handleChange} />
 
 
-            <VenueList {...this.props} handleListItemClick={this.props.handleListItemClick}/>
+            <VenueList {...this.props} 
+                venues={this.searchVenues()}
+                handleListItemClick={this.props.handleListItemClick}/>
         </div>)
     }
 }
