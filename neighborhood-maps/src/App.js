@@ -3,6 +3,7 @@ import './App.css';
 import Map from './components/Map.js';
 import FourSquareAPI from './api/';
 import Sidebar from './components/Sidebar';
+import NavBar from './components/NavBar';
 
 
 class App extends Component {
@@ -88,8 +89,9 @@ handleListItemClick = venue => {
   render() {
     return (
       <div className="App">
+      <NavBar {...this.state} handleListItemClick={this.handleListItemClick}/>
       <Sidebar {...this.state} handleListItemClick={this.handleListItemClick}/>
-        <Map {...this.state}
+      <Map {...this.state}
         handleMarkerClick = {this.handleMarkerClick} />
       </div>
     );
