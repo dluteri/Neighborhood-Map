@@ -98,7 +98,9 @@ handleListItemClick = venue => {
     return (
       <div className="App">
       <NavBar {...this.state} handleListItemClick={this.handleListItemClick}/>
-      <Sidebar {...this.state} handleListItemClick={this.handleListItemClick}/>
+      <Sidebar {...this.state} handleListItemClick={this.handleListItemClick} 
+        toggleSidebar={this.props.toggleSideBar}
+        sidebarOpen={this.props.sidebarOpen}  />
       <Map {...this.state}
         handleMarkerClick = {this.handleMarkerClick} />
       </div>

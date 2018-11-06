@@ -37,7 +37,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
                 <br></br>
                 <a href="${venueInfo.url}" className="website">Website: {venueInfo.Url}</a>
                 <br></br>
-                <a href="${venueInfo.url}" className="website">FourSquare Info: {venueInfo.shortUrl}</a>
+                <a href="${venueInfo.url}" className="fourSquare">FourSquare Info: {venueInfo.shortUrl}</a>
                 </div>
                 </React.Fragment>
             </InfoWindow>
