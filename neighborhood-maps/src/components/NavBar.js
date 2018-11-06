@@ -6,7 +6,8 @@ class NavBar extends Component {
             <nav id="navbar">
                 <h3 id="headerText">Chicago Museums</h3>
                 <h3 tabIndex="0" className="menu-text" title={ this.props.menuText + " Sidebar" }
-                    onClick={() => { this.props.toggleSideBar() }} onKeyPress={this.props.menuKeyEnter}>
+                    onClick={() => { this.props.toggleSideBar() }} 
+                    onKeyPress={this.props.menuKeyEnter}>
                     {
                         this.props.sidebarOpen ?
                         <i className="material-icons" style={{lineHeight: "inherit"}}>clear</i> :
@@ -14,6 +15,8 @@ class NavBar extends Component {
                     }
                 
                 </h3>
+
+
             </nav>
         );
     }
