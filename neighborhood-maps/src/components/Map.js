@@ -24,6 +24,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
             >
             {/* TODO: Add error image if no data/image is available */}
             {marker.isOpen && venueInfo.bestPhoto && ( 
+                
             <InfoWindow>
                 <React.Fragment>
                 <div className="info-window">

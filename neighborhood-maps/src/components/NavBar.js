@@ -6,9 +6,8 @@ class NavBar extends Component {
             <nav id="navbar">
                 <h3 id="headerText">Chicago Museums</h3>
                 <h3 tabIndex="0" className="menu-text" title={ this.props.menuText + " Sidebar" }
-                    onClick={() => { this.props.toggleSideBar() 
-                        this.setState(state => ({ sidebarOpen: !state.sidebarOpen }));
-                    } }
+                    onClick= {this.props.toggleSideBar}
+                    
                     onKeyPress={this.props.menuKeyEnter}>
                     {
                         this.props.sidebarOpen ?

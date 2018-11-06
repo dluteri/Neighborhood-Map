@@ -19,12 +19,12 @@ class App extends Component {
     };
   }
 
- /*} toggleSideBar = () => {
+  toggleSideBar = () => {
     this.setState({
-      collapsed: !this.state.collapsed
+      collapsed: true
     });
   }
-*/
+
   
   //function to close any open marker before opening a new one
   closeAllMarkers = () => {
