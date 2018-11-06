@@ -68,10 +68,12 @@
   display: inline-block;
   margin-top: 3em;
   overflow: scroll;
+  width: 320px;
+  max-width: 100%;
 }
 
-#GoogleMap {
-  margin-top: 3em;
+.map {
+
 }
 
 #navbar {
@@ -84,14 +86,14 @@
 }
 
 #headerText {
-  display: inline-block;
+  
   float: left;
   margin-left: 1em;
 
 }
 
 .menu-text {
-  display: inline-block;
+  
   float: right;
   
 }

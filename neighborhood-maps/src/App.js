@@ -7,6 +7,7 @@ import NavBar from './components/NavBar';
 
 
 class App extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -17,6 +18,13 @@ class App extends Component {
       }
     };
   }
+
+ /*} toggleSideBar = () => {
+    this.setState({
+      collapsed: !this.state.collapsed
+    });
+  }
+*/
   
   //function to close any open marker before opening a new one
   closeAllMarkers = () => {
