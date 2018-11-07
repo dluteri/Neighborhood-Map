@@ -5,16 +5,20 @@ class NavBar extends Component {
         return (
             <nav id="navbar">
                 <h3 id="headerText">Chicago Museums</h3>
-                <h3 tabIndex="0" className="menu-text" title={ this.props.menuText + " Sidebar" }
-                    onClick= {this.props.toggleSideBar}
-                    
+                <h3 tabIndex="0" className="menu-text" title={ "Open/Close Sidebar" }
                     onKeyPress={this.props.menuKeyEnter}>
-                    {
-                        this.props.sidebarOpen ?
-                        <i className="material-icons" style={{lineHeight: "inherit"}}>clear</i> :
-                        <i className="material-icons" style={{lineHeight: "inherit"}}>menu</i> 
-                    }
-                
+                    
+                <i className="material-icons"
+                style={{
+                    lineHeight: "inherit",
+                    marginRight: "1rem",
+                    marginTop: "1rem"
+                }}
+                onClick={() => this.props.toggleSideBar()}>
+                {this.props.sidebarOpen ? "clear" : "menu"}
+                </i>
+
+
                 </h3>
 
 

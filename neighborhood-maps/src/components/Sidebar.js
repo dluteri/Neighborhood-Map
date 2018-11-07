@@ -8,7 +8,7 @@ constructor() {
     super();
     this.state = {
         query: "",
-        venues: []
+        venues: [],
     };
 }
 
