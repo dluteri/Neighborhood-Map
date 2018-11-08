@@ -94,3 +94,23 @@
   float: right;
   
 }
+
+@media (max-width: 475px) {
+  #headerText {
+    font-size: 1.2rem;
+    padding: 0px 10px;
+    margin-top: 1em;
+  }
+  #search {
+    width: 95%
+  }
+  .sidebar {
+    background-color: #b3ddf2; 
+    width: 90%;
+    margin-top: 3.5em;
+  }
+  .listItem {
+  font-size: .7rem;
+  font-weight: bold;
+  }
+}
