@@ -48,6 +48,7 @@ constructor() {
             <VenueList {...this.props} 
                 venues={this.searchVenues()}
                 handleListItemClick={this.props.handleListItemClick}/>
+            <div className="attribution">Mapping info courtesy of Google, Venue info courtesy of FourSquare </div>
         </div>)
     }
 }

@@ -124,11 +124,14 @@ class App extends Component {
         console.log(results);
       })
 
-      /* Alert code from Tyler Stahl*/
+      /* Alert codes from Tyler Stahl*/
       .catch(error => {
         window.alert("Error getting data from Foursquare: " + error.message);
         console.log(error);
       });
+  }
+  gm_authFailure(){
+    window.alert("Error getting data from Google Maps")
   }
 
   render() {

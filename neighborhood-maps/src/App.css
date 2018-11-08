@@ -5,8 +5,6 @@
   text-align: center;
   height: 100vh;
   width: 100vw;
-
-
 }
 
 .App-logo {
@@ -83,16 +81,17 @@
 }
 
 #headerText {
-  
   float: left;
   margin-left: 1em;
 
 }
 
 .menu-text {
-  
   float: right;
-  
+}
+
+.attribution {
+  font-size: small;
 }
 
 @media (max-width: 475px) {
