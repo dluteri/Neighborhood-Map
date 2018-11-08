@@ -12,7 +12,7 @@ class App extends Component {
       venues: [],
       markers: [],
       sidebarOpen: true,
-      lastMarker: null,
+      // lastMarker: null,
       updateSuperState: obj => {
         this.setState(obj);
       }
@@ -56,14 +56,12 @@ class App extends Component {
         this.setState({ error });
         console.log(this.state.error);
       });
-  };
+  
 
 
   setTimeout(() => marker.Animation(null), 2000);
-  this.setState({
-    lastMarker: marker
-  });
-};
+    this.setState({ marker });
+  };
 
   handleListItemClick = venue => {
     const marker = this.state.markers.find(marker => marker.id === venue.id);
