@@ -5,7 +5,7 @@ class Helper {
     static auth() {
         const keys = {
             client_id:"11T4OMRIL43DHRCYZ1ECJVFEXACKWO2OM55QUEINFL4I54U3",
-            client_secret:"OGPANXGZGIWF53N3PWW04TNJAISQAMI0AUHLUVNW4WHZYRZP",
+            client_secret:"2YY40Q0DPJZOBRGBRB2SKAM0LQMFDU5T2Z2XLIVGPA4VR2WO",
             v: "20181029"  // version # = date created
         };
         // turn keys into a string 
