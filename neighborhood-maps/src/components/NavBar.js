@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 
 class NavBar extends Component {
     render() {
+        const { menuKeyEnter, toggleSideBar, sidebarOpen } = this.props;
         return (
             <nav id="navbar">
                 <h3 id="headerText">Chicago Museums</h3>
                 <h3 tabIndex="0" className="menu-text" title={ "Open/Close Sidebar" }
-                    onKeyPress={this.props.menuKeyEnter}>
+                    onKeyPress={menuKeyEnter}>
                     
                 <i className="material-icons"
                 style={{
@@ -14,8 +15,8 @@ class NavBar extends Component {
                     marginRight: "1rem",
                     marginTop: "1rem"
                 }}
-                onClick={() => this.props.toggleSideBar()}>
-                {this.props.sidebarOpen ? "clear" : "menu"}
+                onClick={() => toggleSideBar()}>
+                {sidebarOpen ? "clear" : "menu"}
                 </i>
 
 

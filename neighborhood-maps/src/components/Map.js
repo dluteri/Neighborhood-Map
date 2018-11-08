@@ -6,8 +6,8 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from "reac
 // Mounts Google Maps to project. 
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
-        defaultZoom={10}
-        defaultCenter={{ lat: 41.881832, lng: -87.623177 }}
+        defaultZoom={12}
+        defaultCenter={{ lat: 41.881832, lng: -87.65 }}
     >
 {/* shows the markers of results on map*/}
     {props.markers && 
@@ -26,7 +26,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
                 : google.maps.Animation.DROP}
             >
 
-            
+
             {/* TODO: Add error image if no data/image is available */}
             {marker.isOpen && venueInfo.bestPhoto && ( 
                 

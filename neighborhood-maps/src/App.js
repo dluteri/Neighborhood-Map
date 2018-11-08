@@ -12,8 +12,7 @@ class App extends Component {
       venues: [],
       markers: [],
       sidebarOpen: true,
-      // lastMarker: null,
-      updateSuperState: obj => {
+        updateSuperState: obj => {
         this.setState(obj);
       }
     };
@@ -38,16 +37,18 @@ class App extends Component {
 
   // Opens InfoWindow when marker is clicked
   handleMarkerClick = marker => {
+    const { venues, markers } = this.state;
+
     this.closeAllMarkers();
     marker.isOpen = true;
-    this.setState({ markers: Object.assign(this.state.markers, marker) });
-    const venue = this.state.venues.find(venue => venue.id === marker.id);
+    this.setState({ markers: Object.assign(markers, marker) });
+    const venue = venues.find(venue => venue.id === marker.id);
 
     FourSquareAPI.getVenueDetails(marker.id)
       .then(results => {
         const mergedVenueData = Object.assign(venue, results.response.venue);
         this.setState({
-          venues: Object.assign(this.state.venues, mergedVenueData)
+          venues: Object.assign(venues, mergedVenueData)
         });
 
         console.log(venue);
@@ -59,8 +60,8 @@ class App extends Component {
   
 
 
-  setTimeout(() => marker.Animation(null), 2000);
-    this.setState({ marker });
+  // setTimeout(() => marker.Animation(null), 2000);
+  //   this.setState({ marker });
   };
 
   handleListItemClick = venue => {
@@ -99,6 +100,7 @@ class App extends Component {
   }
 
   render() {
+    
     return (
       <div className="App">
         <NavBar {...this.state} toggleSideBar={this.toggleSideBar} />

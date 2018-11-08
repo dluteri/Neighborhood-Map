@@ -26,16 +26,17 @@ constructor() {
     handleChange = event => {
         this.setState({ query: event.target.value});
         const markers = this.props.venues.map(venue => {
-            const isMatched = venue.name.toLowerCase().includes(event.target.value.toLowerCase());
-            const marker = this.props.markers.find(marker => marker.id === venue.id);
-            if(isMatched) {
-                marker.isVisible = true;
-            }else{
-                marker.isVisible = false;
-            }
-            return marker; 
-        });
-        this.props.updateSuperState({markers: Object.assign(this.props.markers, markers)})
+        const isMatched = venue.name.toLowerCase().includes(event.target.value.toLowerCase());
+        const marker = this.props.markers.find(marker => marker.id === venue.id);
+        if(isMatched) {
+            marker.isVisible = true;
+        }else{
+            marker.isVisible = false;
+        }
+        return marker; 
+    });
+        const allMarkers = this.props.markers;
+        this.props.updateSuperState({markers: Object.assign(allMarkers, markers)})
     };       
 
 
