@@ -2,8 +2,8 @@
   background: #b3ddf2; /*"Chicago Blue"*/
   display: flex;
   flex-flow: row nowrap;    
-  text-align: center;
   height: 100vh;
+  text-align: center;
   width: 100vw;
 }
 
@@ -13,14 +13,14 @@
 }
 
 .App-header {
+  align-items: center;
   background-color: #282c34;
-  min-height: 100vh;
+  color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 .App-link {
@@ -38,13 +38,13 @@
 
 .listItem {
   background-color: whitesmoke;
-  list-style: none;
-  font-size: 1rem;
   box-shadow: 1px 1px 1px rgb(0, 0, 0, 0.3);
-  padding: .5rem; 
-  margin-top: 1rem;
-  margin-right: 2rem;
   cursor: pointer;
+  font-size: 1rem;
+  list-style: none;
+  margin-right: 2rem;
+  margin-top: 1rem;
+  padding: .5rem; 
 }
 
 .venueList {
@@ -60,23 +60,22 @@
 
 .sidebar {
   background-color: #b3ddf2; 
-  width: 25%;
-  position: relative;
-  z-index: 100;
   display: inline-block;
   margin-top: 3em;
-  overflow: scroll;
-  width: 320px;
   max-width: 100%;
+  overflow: scroll;
+  position: relative;
+  width: 320px;
+  z-index: 100;
 }
 
 
 #navbar {
-  display: inline-block;
-  z-index: 100;
   background: #b3ddf2;
-  width: 100%;
+  display: inline-block;
   position: fixed;
+  width: 100%;
+  z-index: 100;
   
 }
 
@@ -97,16 +96,16 @@
 @media (max-width: 475px) {
   #headerText {
     font-size: 1.2rem;
-    padding: 0px 10px;
     margin-top: 1em;
+    padding: 0px 10px;
   }
   #search {
     width: 95%
   }
   .sidebar {
     background-color: #b3ddf2; 
-    width: 90%;
     margin-top: 3.5em;
+    width: 90%;
   }
   .listItem {
   font-size: .7rem;

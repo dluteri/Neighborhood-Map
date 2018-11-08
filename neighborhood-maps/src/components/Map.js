@@ -23,8 +23,6 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
             animation={marker.isOpen ? google.maps.Animation.DROP : null}
             >
 
-
-            {/* TODO: Add error image if no data/image is available */}
             {marker.isOpen && venueInfo.bestPhoto && ( 
                 
             <InfoWindow>

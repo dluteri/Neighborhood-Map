@@ -1,8 +1,6 @@
 import React, {Component} from "react";
 import VenueList from "./VenueList";
 
-
-
 export default class Sidebar extends Component {
 constructor() {
     super();
@@ -22,7 +20,6 @@ constructor() {
         return this.props.venues;
     };
 
-
     handleChange = event => {
         this.setState({ query: event.target.value});
         const markers = this.props.venues.map(venue => {
@@ -39,16 +36,14 @@ constructor() {
         this.props.updateSuperState({markers: Object.assign(allMarkers, markers)})
     };       
 
-
     render() {
         return (<div className="sidebar">
             <input type={"search"} id={"search"} placeholder={"Filter Venues"} onChange={this.handleChange} />
 
-
             <VenueList {...this.props} 
                 venues={this.searchVenues()}
                 handleListItemClick={this.props.handleListItemClick}/>
-            <div className="attribution">Mapping info courtesy of Google, Venue info courtesy of FourSquare </div>
+            <div className="attribution">Mapping info courtesy of Google, Venue info courtesy of FourSquare</div>
         </div>)
     }
 }

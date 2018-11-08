@@ -9,20 +9,16 @@ class NavBar extends Component {
                 <h3 tabIndex="0" className="menu-text" title={ "Open/Close Sidebar" }
                     onKeyPress={menuKeyEnter}>
                     
-                <i className="material-icons"
-                style={{
-                    lineHeight: "inherit",
-                    marginRight: "1rem",
-                    marginTop: "1rem"
-                }}
-                onClick={() => toggleSideBar()}>
-                {sidebarOpen ? "clear" : "menu"}
-                </i>
-
-
+                    <i className="material-icons"
+                    style={{
+                        lineHeight: "inherit",
+                        marginRight: "1rem",
+                        marginTop: "1rem"
+                    }}
+                    onClick={() => toggleSideBar()}>
+                    {sidebarOpen ? "clear" : "menu"}
+                    </i>
                 </h3>
-
-
             </nav>
         );
     }
