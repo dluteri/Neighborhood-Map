@@ -36,12 +36,49 @@ class App extends Component {
   };
 
   // Opens InfoWindow when marker is clicked
+  
+  // handleMarkerClick = marker => {
+  //   const { venues, markers } = this.state;
+
+  //   this.closeAllMarkers();
+  //   marker.isOpen = true;
+  //   this.setState({ markers: Object.assign(markers, marker) });
+  //   const venue = venues.find(venue => venue.id === marker.id);
+
+  //   FourSquareAPI.getVenueDetails(marker.id)
+  //     .then(results => {
+  //       const mergedVenueData = Object.assign(venue, results.response.venue);
+  //       this.setState({
+  //         venues: Object.assign(venues, mergedVenueData)
+  //       });
+
+  //       console.log(venue);
+  //     })
+  //     .catch(error => {
+  //       this.setState({ error });
+  //       console.log(this.state.error);
+  //     });
+  
+
+
+  // // setTimeout(() => marker.Animation(null), 2000);
+  // //   this.setState({ marker });
+  // };
+
   handleMarkerClick = marker => {
     const { venues, markers } = this.state;
 
     this.closeAllMarkers();
     marker.isOpen = true;
-    this.setState({ markers: Object.assign(markers, marker) });
+
+    this.setState({ markers: Object.assign(markers, marker) }, () => {
+      // setTimeout(() => {
+      //   marker.isOpen = false;
+      //   this.setState({
+      //     markers: Object.assign(markers)
+      //   });
+      // }, 1300);
+    });
     const venue = venues.find(venue => venue.id === marker.id);
 
     FourSquareAPI.getVenueDetails(marker.id)
@@ -57,11 +94,6 @@ class App extends Component {
         this.setState({ error });
         console.log(this.state.error);
       });
-  
-
-
-  // setTimeout(() => marker.Animation(null), 2000);
-  //   this.setState({ marker });
   };
 
   handleListItemClick = venue => {
@@ -72,8 +104,8 @@ class App extends Component {
   componentDidMount() {
     FourSquareAPI.search({
       near: "Chicago, IL",
-      query: "museum", // museums
-      limit: 50
+      query: "museum",
+      limit: 20
     })
 
       .then(results => {

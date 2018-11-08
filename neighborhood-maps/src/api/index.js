@@ -4,8 +4,10 @@ class Helper {
     }
     static auth() {
         const keys = {
-            client_id:"11T4OMRIL43DHRCYZ1ECJVFEXACKWO2OM55QUEINFL4I54U3",
-            client_secret:"2YY40Q0DPJZOBRGBRB2SKAM0LQMFDU5T2Z2XLIVGPA4VR2WO",
+            // client_id:"11T4OMRIL43DHRCYZ1ECJVFEXACKWO2OM55QUEINFL4I54U3",
+            // client_secret:"2YY40Q0DPJZOBRGBRB2SKAM0LQMFDU5T2Z2XLIVGPA4VR2WO",
+            client_id:"1S1GSSBY0NNIODYJH15W5TIWUEJ42TKSZUNI5OB3GVDNHLBD",
+            client_secret:"CUACQNTOM13ZTKQI3K3MYS2YTE40FONQVF2TO2RHGNAEZ02P",
             v: "20181029"  // version # = date created
         };
         // turn keys into a string 

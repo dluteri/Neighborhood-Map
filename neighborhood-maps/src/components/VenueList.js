@@ -5,9 +5,10 @@ import ListItem from './ListItem';
 
 export default class VenueList extends Component {
     render() {
+        const venues = this.props.venues;
         return (<ol className="VenueList">
-            {this.props.venues && 
-                this.props.venues.map((venue, idx) => (
+            {venues && 
+                venues.map((venue, idx) => (
                     <ListItem key={idx} {...venue}  
             handleListItemClick={this.props.handleListItemClick}/> 
             ))}

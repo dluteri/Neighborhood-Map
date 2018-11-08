@@ -20,10 +20,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
             key={idx} 
             position={{ lat: marker.lat, lng: marker.lng}} 
             onClick={() => props.handleMarkerClick(marker)}
-            animation={
-                marker.isOpen
-                ? google.maps.Animation.BOUNCE
-                : google.maps.Animation.DROP}
+            animation={marker.isOpen ? google.maps.Animation.DROP : null}
             >
 
 
