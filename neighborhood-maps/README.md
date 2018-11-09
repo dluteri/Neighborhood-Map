@@ -2,7 +2,7 @@
 
 This map app was created with ReactJS, which allows the user to search the Chicago area for museums, filter the results and learn more about each venue (through an api server).  This is the final project for [Udacity's Front End Nanodegree Program](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001).
 
-![](src\images\NeighborhoodMaps.png)
+![](src/images/NeighborhoodMaps.png)
 
 ## Requirements
 
