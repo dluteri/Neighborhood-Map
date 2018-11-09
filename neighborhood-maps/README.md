@@ -45,4 +45,4 @@ There was a lot of help used to get this project up an running, including:
 - [Google Maps API](https://developers.google.com/maps/documentation/) and [FourSquare Developers](https://developer.foursquare.com/docs/api) documentations
 - Slack live meetings with Udacity students and coaches
 
-And I would like to express my undying gratitude to all the members of the Super Sloths cohort - Jason W., Michael J., Sabrina T., Tyler S., Sonam C., and Jenna K.  This team of amazing people have been a critical support system both in  the technical understand of the work, but also the much needed emotion motivation.  You guys are the best-est!
+And I would like to express my undying gratitude to all the members of the Super Sloths cohort - Jason W., Michael J., Sabrina T., Tyler S., Sonam C., and Jenna K.  This team of amazing people have been a critical support system both in  the technical understand of the work, but also the much needed emotional motivation.  You guys are the best-est!
