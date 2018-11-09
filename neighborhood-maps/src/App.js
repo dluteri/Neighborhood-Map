@@ -72,6 +72,10 @@ class App extends Component {
   };
 
   componentDidMount() {
+
+    //Google error handling
+    window.gm_authFailure = this.gm_authFailure;
+
     FourSquareAPI.search({
       near: "Chicago, IL",
       query: "museum",

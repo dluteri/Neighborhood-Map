@@ -57,7 +57,7 @@ render() {
     isMarkerShown
     googleMapURL="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDswyf0u0pPovvQ3md6sY6hQEarYc3z7cE"
     loadingElement={<div style={{ height: `100%` }} />}
-    containerElement={<div style={{ height: `100%`, width: `100%` }} />} 
+    containerElement={<div style={{ height: `100%`, width: `100%` }} className="map-container" role="application" />}
     mapElement={<div style={{ height: `94%`, marginTop: `3em` }} />}
 />);
 }

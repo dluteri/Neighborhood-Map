@@ -1,6 +1,18 @@
 // This optional code is used to register a service worker.
 // register() is not called by default.
 
+//If you would like to activate the service worker, please run the Production (Build) Installation Instructions:
+/* 
+Production (build) Installation:
+
+- [Download](https://github.com/dluteri/Neighborhood-Map) or [clone](https://github.com/dluteri/Neighborhood-Map) the repository
+- Run `npm install`  to install the project dependencies
+- Open your command line interface 
+- Run `npm build` to produce an optimized version of the project
+- Intiate the server with `serve -s build`
+- App will appear in your local web browser at: `localhost:5000` 
+*/
+
 // This lets the app load faster on subsequent visits in production, and gives
 // it offline capabilities. However, it also means that developers (and users)
 // will only see deployed updates on subsequent visits to a page, after all the
