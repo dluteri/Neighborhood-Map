@@ -6,7 +6,7 @@ This map app was created with ReactJS, which allows the user to search the Chica
 
 ## Demo
 
-[Click here to run a demo of this app on Heroku.]{https://neighborhood-map-luteri.herokuapp.com/)
+[Click here to run a demo of this app on Heroku.](https://neighborhood-map-luteri.herokuapp.com/)
 
 ## Requirements
 
